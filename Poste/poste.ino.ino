@@ -1,0 +1,23 @@
+int porta = A1;
+int valor;
+int led = 8;
+//oi
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(porta, INPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  valor = analogRead(porta);
+  Serial.println(valor);
+  delay(1);
+
+  if (valor < 200) {
+    digitalWrite(led, HIGH);
+} else {
+    digitalWrite(led, LOW);
+  }
+  
+}
